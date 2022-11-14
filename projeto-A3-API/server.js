@@ -4,10 +4,9 @@ const dotenv =      require("dotenv")
 
 dotenv.config()
 
-
 // mongo connection
 console.log(process.env.HOST + "\n")
-mongoose.connect(`mongodb+srv://${'lucas'}:${'lucas123'}@${'cluster0'}.${'fxzv4gp'}.mongodb.net/?retryWrites=true&w=majority`,{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.HOST,{useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection 
 
 db.on('error', (err) => {
