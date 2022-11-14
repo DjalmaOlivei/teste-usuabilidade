@@ -7,7 +7,7 @@ dotenv.config()
 
 // mongo connection
 console.log(process.env.HOST + "\n")
-mongoose.connect('mongodb://'+process.env.HOST+':27017/testdb',{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://'+process.env.HOST+'/testdb',{useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection 
 
 db.on('error', (err) => {
