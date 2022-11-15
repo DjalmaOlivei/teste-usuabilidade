@@ -82,8 +82,11 @@ const dell =(req, res, next) => {
 }
 
 const list = (req, res, next) => {
+
+        const requestBody = req.body
+
     try{
-        User.find(req.body).then((response) =>{
+        User.find(requestBody).then((response) =>{
             res.status(200).json({response})
         })
         
