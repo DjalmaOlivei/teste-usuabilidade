@@ -69,12 +69,11 @@ router.post('/update', (req, res, next) => {
 
 })
 
-router.get('/list', (req, res, next) => {
-
+router.post('/list', (req, res, next) => {
 
     const requestBody = req.body 
     try{
-        Paciente.find({requestBody}).then((response) =>{
+        Paciente.find(requestBody).then((response) =>{
             res.status(200).json({response})
         })
         
