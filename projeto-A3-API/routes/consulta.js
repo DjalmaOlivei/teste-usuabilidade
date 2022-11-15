@@ -74,7 +74,6 @@ router.post('/update', (req, res, next) => {
 router.post('/list', (req, res, next) => {
 
     const requestBody = req.body
-    re
     try{
         Consulta.find(requestBody).then((response) =>{
             res.status(200).json({response})
