@@ -1,9 +1,10 @@
 const express =     require("express")
 const mongoose =    require("mongoose")
 const dotenv =      require("dotenv")
+const cors =      require("cors")
 
 dotenv.config()
-
+ 
 // mongo connection
 console.log(process.env.HOST + "\n")
 mongoose.connect(process.env.HOST,{useNewUrlParser: true, useUnifiedTopology: true})
@@ -33,6 +34,8 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT , () => {
     console.log("listen on port :"+ PORT)
 })
+
+app.use(cors())
 
 app.use('/user', AuthRoute)
 app.use('/consulta',Authentication , ConsultaRoute) 
