@@ -10,9 +10,15 @@ router.post('/add',(req, res, next) => {
     
     let paciente = new Paciente ({
         cpf:   req.body.cpf,
-        name:   req.body.name,
-        email:   req.body.email,
-        phone: req.body.phone
+        sexo:        req.body.sexo,
+        name:       req.body.name,
+        email:      req.body.email,
+        phone:      req.body.phone,
+        phone2:     req.body.phone2,
+        especie:    req.body.especie,
+        nascimento: req.body.nascimento,
+        ativo:      req.body.ativo,
+        endereco: req.body.endereco
     })
     paciente.save()
     .then(paciente => {
@@ -49,9 +55,15 @@ router.post('/update', (req, res, next) => {
 
     let pacienteData = {
         cpf:   req.body.cpf,
-        name:   req.body.name,
-        email:   req.body.email,
-        phone: req.body.phone
+        sexo:        req.body.sexo,
+        name:       req.body.name,
+        email:      req.body.email,
+        phone:      req.body.phone,
+        phone2:     req.body.phone2,
+        especie:    req.body.especie,
+        nascimento: req.body.nascimento,
+        ativo:      req.body.ativo,
+        endereco: req.body.endereco
     }
 
     Paciente.findByIdAndUpdate(pacienteID, {$set: pacienteData})

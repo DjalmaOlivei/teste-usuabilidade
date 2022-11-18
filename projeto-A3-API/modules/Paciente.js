@@ -15,6 +15,21 @@ const pacienteSchema    = new Schema({
         phone:   {
             type: String
         },
+        phone2:{
+            type: String
+        },
+        sexo: {
+            type: String
+        }, 
+        nascimento: {
+            type: Date
+        },
+        ativo:  {
+            type: Boolean
+        },
+        endereco: {
+            type: String
+        }
 }, {timestamps: true})
 
 const Paciente = mongoose.model('Paciente',pacienteSchema)

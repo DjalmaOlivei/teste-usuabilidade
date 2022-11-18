@@ -11,13 +11,7 @@ const userSchema    = new Schema({
         phone:   {
             type: String
         },
-        cpf:   {
-            type: String
-        },
-        crm:   {
-            type: String
-        },
-        especie:   {
+        cargo:  {
             type: String
         },
         password:   {
