@@ -25,6 +25,7 @@ const AuthRoute =   require('./routes/auth')
 const ConsultaRoute =   require('./routes/consulta')
 const Authentication = require("./middleware/authenticate")
 const PacienteRoute = require("./routes/paciente")
+const MedicoRoute = require("./routes/medico")
 
 
 app.use(express.json())
@@ -40,3 +41,4 @@ app.use(cors())
 app.use('/user', AuthRoute)
 app.use('/consulta',Authentication , ConsultaRoute) 
 app.use('/paciente',Authentication , PacienteRoute) 
+app.use('/medico',Authentication , MedicoRoute) 
