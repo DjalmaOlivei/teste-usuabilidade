@@ -12,12 +12,11 @@ const register  = (req, res, next) => {
             }
 
             let user = new User ({
-                name : req.body.name,
-                email : req.body.email,
-                phone : req.body.phone,
-                cpf : req.body.cpf,
-                crm : req.body.crm,
-                especie : req.body.especie,
+                firstname:  req.body.firstname,
+                email:      req.body.email,
+                password:   req.body.password,
+                telefone:   req.body.telefone,
+                cargo:      req.body.cargo,
                 password : hashedPass 
             })
             user.save()
@@ -41,12 +40,11 @@ const update = (req, res, next) => {
     let userID = req.body.userID
 
     let userData = {
-        name : req.body.name,
-        email : req.body.email,
-        phone : req.body.phone,
-        cpf : req.body.cpf,
-        crm : req.body.crm,
-        especie : req.body.especie
+        firstname:  req.body.firstname,
+        email:      req.body.email,
+        password:   req.body.password,
+        telefone:   req.body.telefone,
+        cargo:      req.body.cargo
     }
 
     User.findByIdAndUpdate(userID, {$set: userData})
@@ -101,7 +99,7 @@ const login = (req, res, next) => {
     let username = req.body.username
     let password = req.body.password
 
-    User.findOne({$or: [{email:username},{phone:username}]})
+    User.findOne({$or: [{email:username},{telefone:username}]})
     .then( user => {
         if(user){
             bcrypt.compare(password, user.password, (err, result) => {
