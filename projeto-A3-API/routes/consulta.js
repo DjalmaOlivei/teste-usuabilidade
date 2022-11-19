@@ -45,7 +45,7 @@ router.delete("/delete", (req, res, next) => {
     })
 })
 
-router.post('/update', (req, res, next) => {
+router.put('/update', (req, res, next) => {
     let consultaID = req.body.consultaID
 
     let consultaData = {

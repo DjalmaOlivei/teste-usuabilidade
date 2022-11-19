@@ -50,7 +50,7 @@ router.delete("/delete", (req, res, next) => {
     })
 })
 
-router.post('/update', (req, res, next) => {
+router.put('/update', (req, res, next) => {
     let pacienteID = req.body.pacienteID
 
     let pacienteData = {
