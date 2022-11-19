@@ -18,7 +18,8 @@ router.post('/add',(req, res, next) => {
         celular:            req.body.celular,
         telefone:           req.body.telefone,
         cpf:                req.body.cpf,
-        observacoes:        req.body.observacoes
+        observacoes:        req.body.observacoes,
+        retorno:            req.body.retorno
     })
     consulta.save()
     .then(consulta => {
@@ -63,7 +64,8 @@ router.put('/update', (req, res, next) => {
     celular:            req.body.celular,
     telefone:           req.body.telefone,
     cpf:                req.body.cpf,
-    observacoes:        req.body.observacoes
+    observacoes:        req.body.observacoes,
+    retorno:            req.body.retorno
     }
 
     Consulta.findByIdAndUpdate(consultaID, {$set: consultaData})
