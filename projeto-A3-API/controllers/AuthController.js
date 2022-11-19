@@ -65,7 +65,7 @@ const update = (req, res, next) => {
 const dell =(req, res, next) => {
     let userID = req.body.userID
 
-    User.findOneAndRemove(userID)
+    User.findByIdAndDelete(userID)
     .then(() => {
        res.json({ 
         message: "Usuário apagada"

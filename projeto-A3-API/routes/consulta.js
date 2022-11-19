@@ -38,7 +38,7 @@ router.post('/add',(req, res, next) => {
 router.delete("/delete", (req, res, next) => {
     let consultaID = req.body.consultaID
 
-    Consulta.findOneAndRemove(consultaID)
+    Consulta.findByIdAndDelete(consultaID)
     .then(() => {
        res.json({ 
         message: "consulta apagada"

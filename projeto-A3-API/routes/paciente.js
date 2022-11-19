@@ -39,7 +39,7 @@ router.post('/add',(req, res, next) => {
 router.delete("/delete", (req, res, next) => {
     let pacienteID = req.body.pacienteID
 
-    Paciente.findOneAndRemove(pacienteID)
+    Paciente.findByIdAndDelete(pacienteID)
     .then(() => {
        res.json({ 
         message: "paciente apagada"
