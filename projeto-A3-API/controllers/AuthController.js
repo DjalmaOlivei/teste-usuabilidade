@@ -114,7 +114,8 @@ const login = (req, res, next) => {
                     res.json({
                         message: 'login successful',
                         token,
-                        refreshtoken
+                        refreshtoken,
+                        user
                     })
                 }else{
                     res.status(400).json({
